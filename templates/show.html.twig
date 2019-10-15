@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tableau des articles (Admin){% endblock %}
+
+{% block body %}
+
+<thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Id</th>
+      <th scope="col">Libelle</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+</thead>
+<body>
+    {% for article in articles %}
+        <tr class="table-active">
+      <th scope="row">Active</th>
+      <td>{{article.Libelle}}</td>
+      <td>{{article.Prix}}</td>
+      <td>{{article.Description}}</td>
+      <td>{{article.Image}}</td>
+      <button type="button" class="btn btn-secondary">Modifier l'annonce</button>
+      <button type="button" class="btn btn-danger">Supprimer l'annonce</button>
+    </tr>
+    {% endfor %}
+</body>
